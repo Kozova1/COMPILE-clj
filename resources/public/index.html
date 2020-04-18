@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link rel="icon" href="https://clojurescript.org/images/cljs-logo-icon-32.png">
+  </head>
+  <body>
+    <div id="app">
+      <div id="vbox">
+        <div id="paper">
+          <div id="notebook-pattern">
+            <textarea id="code-box" cols=40 rows=32></textarea>
+          </div>
+        </div>
+        <p>This game was made for the 2020 itch.io Spring LISP game Jam by Kozova1</p>
+      </div>
+      <div id="paper-note">
+        <p style="text-align: center;">
+          If the game  does not load, press RELOAD with no code in the notebook
+        </p>
+        <p style="text-align: center;">
+          Please do not mash COMPILE, the game moves you to the next level automatically after 3 seconds
+        </p>
+      </div>
+      <div id="ctr">
+        <div id="valign">
+          <canvas id="game-canvas" height="528" width="528"></canvas>
+          <div id="button-container">
+            <button id="run-button">COMPILE	&#10148;</button>
+            <button id="doc-button" onclick="window.location.href = './Documentation.pdf'">DOCS &nbsp;&nbsp;&#128214; </button>
+            <button id="reset-button">RESET &nbsp;&nbsp;&#8635;</button>
+            <button id="reload-button" onclick="document.getElementById('run-button').click()">RELOAD ⟲</button>
+          </div>
+          <div style="display: flex;">
+            <textarea id="reg-debug-box" cols=20 rows=10 readonly>
+A: 0
+B: 0
+COND: FALSE
+
+OUTPUT:
+            </textarea>
+          </div>
+          <textarea id="error-box" cols=40 rows=1 readonly>All OK</textarea>
+        </div>
+      </div>
+    </div>
+    <script src="./js/compiled/lisp_game_cljs.js" type="text/javascript"></script>
+  </body>
+</html>
